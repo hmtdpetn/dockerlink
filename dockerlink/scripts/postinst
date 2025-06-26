@@ -1,0 +1,5 @@
+#!/bin/sh
+PYTHON_DIR=$(synopkg var Python3.9)
+PIP_EXEC=${PYTHON_DIR}/bin/pip3
+${PIP_EXEC} install flask
+exit 0

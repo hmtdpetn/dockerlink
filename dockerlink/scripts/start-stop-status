@@ -1,0 +1,15 @@
+#!/bin/bash
+
+case $1 in
+    start)
+        echo "Docker Link desktop application started"
+        exit 0
+        ;;
+    stop)
+        echo "Docker Link desktop application stopped"
+        exit 0
+        ;;
+    status)
+        exit 0
+        ;;
+esac

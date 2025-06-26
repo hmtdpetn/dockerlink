@@ -1,0 +1,11 @@
+{
+    "url": {
+        "xray.DockerLink": {
+            "type": "url",
+            "title": "Docker Link",
+            "desc": "A custom package for docker linking.",
+            "icon": "images/icon_64.png",
+            "url": "http://{{hostname}}:40234/"
+        }
+    }
+}

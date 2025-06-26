@@ -1,0 +1,48 @@
+#!/bin/bash
+
+PKG_DIR=/tmp/_dockerlink_spk
+rm -rf $PKG_DIR
+mkdir -p $PKG_DIR
+
+source /pkgscripts-ng/include/pkg_util.sh
+
+create_inner_tarball() {
+    local inner_tarball_dir=/tmp/_inner_tarball
+    rm -rf $inner_tarball_dir && mkdir -p $inner_tarball_dir
+    
+    # 复制ui文件到package.tgz中
+    mkdir -p $inner_tarball_dir/ui
+    cp -r ui/* $inner_tarball_dir/ui/
+    
+    # 复制其他脚本
+    if [ -f scripts/daemon.py ]; then
+        mkdir -p $inner_tarball_dir/scripts
+        cp scripts/daemon.py $inner_tarball_dir/scripts/
+    fi
+    
+    pkg_make_package $inner_tarball_dir "${PKG_DIR}"
+}
+
+create_spk() {
+    local scripts_dir=$PKG_DIR/scripts
+    mkdir -p $scripts_dir
+    cp -av scripts/* $scripts_dir
+    
+    # 复制图标
+    cp -av PACKAGE_ICON*.PNG $PKG_DIR/
+    
+    # 生成INFO文件
+    ./INFO.sh > INFO
+    cp INFO $PKG_DIR/INFO
+    
+    # 复制conf目录
+    if [ -d conf ]; then
+        cp -r conf $PKG_DIR/
+    fi
+    
+    mkdir -p /image/packages
+    pkg_make_spk ${PKG_DIR} "/image/packages" $(pkg_get_spk_family_name)
+}
+
+create_inner_tarball
+create_spk

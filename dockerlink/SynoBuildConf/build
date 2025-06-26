@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "${SYNOPKG_PKGDEST}/ui"
+# 这里如果有前端构建命令就写在下面，例如：
+# npm install && npm run build

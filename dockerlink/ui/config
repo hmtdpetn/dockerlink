@@ -1,0 +1,12 @@
+{
+    "xray.DockerLink": {
+        "type": "url",
+        "title": "Docker Link",
+        "desc": "Docker容器链接管理工具",
+        "icon": "images/icon_{0}.png",
+        "url": "index.html",
+        "allUsers": true,
+        "allowMultiInstance": false,
+        "hidden": false
+    }
+}

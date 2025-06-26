@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+        .button {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐳 Docker Link Manager</h1>
+        
+        <div class="card">
+            <h2>欢迎使用 Docker Link</h2>
+            <p>这是您的 Docker 链接管理工具。</p>
+        </div>
+        
+        <div class="card">
+            <h3>快速操作</h3>
+            <a href="#" class="button" onclick="alert('Docker 状态检查功能')">检查 Docker 状态</a>
+            <a href="#" class="button" onclick="alert('容器管理功能')">管理容器</a>
+            <a href="#" class="button" onclick="alert('网络配置功能')">网络配置</a>
+        </div>
+        
+        <div class="card">
+            <h3>系统信息</h3>
+            <p>版本: 1.0-0001</p>
+            <p>状态: <span style="color: #4CAF50;">运行中</span></p>
+            <p>安装时间: <span id="install-time"></span></p>
+        </div>
+    </div>
+    
+    <script>
+        // 显示当前时间作为安装时间示例
+        document.getElementById('install-time').textContent = new Date().toLocaleString('zh-CN');
+        
+        // 简单的交互功能
+        console.log('Docker Link 应用已加载');
+    </script>
+</body>
+</html>
